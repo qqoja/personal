@@ -45,8 +45,10 @@ jobs:
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle install
+        working-directory: ./personal
       - name: Build site
         run: bundle exec jekyll build --baseurl "/personal"
+        working-directory: ./personal
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
