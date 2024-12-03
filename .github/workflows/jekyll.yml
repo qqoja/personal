@@ -47,7 +47,7 @@ jobs:
         working-directory: ./contact
         run: bundle install
       - name: Build site
-        run: bundle exec jekyll build --baseurl "/contact"
+        run: bundle exec jekyll build --baseurl "./contact"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
