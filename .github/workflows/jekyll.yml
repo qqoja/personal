@@ -43,11 +43,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
-        working-directory: ./personal
         # Outputs to the './_site' directory by default
         run: bundle install
       - name: Build site
-        run: bundle exec jekyll build --baseurl "/personal"
+        run: bundle exec jekyll build --baseurl "/contact"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
@@ -58,7 +57,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: $contact
     runs-on: ubuntu-22.04
     needs: build
     steps:
