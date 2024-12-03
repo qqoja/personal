@@ -44,10 +44,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        working-directory: ./contact
+        working-directory: './contact'
         run: bundle install
       - name: Build site
-        run: bundle exec jekyll build --baseurl "./contact"
+        run: bundle exec jekyll build --baseurl "/contact"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
